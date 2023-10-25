@@ -1,6 +1,6 @@
 # GameHub Figma Design Implementation with Astro
 
-![GameHub Screenshot](gamehub.png)
+[![GameHub Screenshot](gamehub.png)](https://65397c5ce545fe25f1f85848--extraordinary-concha-6924a8.netlify.app/)
 
 ## Overview
 
@@ -18,12 +18,24 @@ GameHub is a web application that brings a stunning Figma design to life using t
 
 ## Getting Started
 
-To run GameHub locally, follow these steps:
+To run this project locally, follow these steps:
 
-1. **Clone the repository:**
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/danpvlz/gamehub.git
+
+2. Enter the project
+
+   ```bash
    cd gamehub
-   npm install
-   npm run dev
+
+3. Install dependencies
+
+   ```bash
+   pnpm install
+
+4. Start project
+
+   ```bash
+   pnpm run dev
