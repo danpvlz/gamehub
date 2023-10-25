@@ -10,17 +10,21 @@ import Button from "../Button.astro";
 
 <Section id="home">
   <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5">
-    <Image src={towers} height={towers.height} class="w-full h-full object-cover" alt="Mario bross towers" />
+    <div class="w-full h-full bg-zinc-200">
+      <Image src={towers} height={towers.height} class="w-full h-full object-cover" alt="Mario bross towers" />
+    </div>
     <div class="col-span-2 flex flex-col justify-between items-center md:items-start mt-5 md:mt-0 gap-5 md:gap-10">
-      <div class="grid grid-cols-3 gap-5 order-4 md:order-1">
-        <Image src={planet} width={"500"} height={"500"} class="w-full h-full object-cover" alt="Pixeled world" />
-        <Image src={castle}  class="w-full h-full object-cover" alt="Pixeled castle" />
-        <Image
+      <div class="grid grid-cols-3 gap-5 order-4 md:order-1 w-full">
+        <div class="w-full h-full aspect-square bg-zinc-200"><Image src={planet} width={"500"} height={"500"} class="w-full h-full object-cover" alt="Pixeled world" /></div>
+        <div class="w-full h-full aspect-square bg-zinc-200"><Image src={castle}  class="w-full h-full object-cover" alt="Pixeled castle" /></div>
+        <div class="w-full h-full aspect-square bg-zinc-200">
+          <Image
           src={afrohair}
           width={"500"} height={"500"}
           class="w-full h-full object-cover"
           alt="Pixeled afro hair"
         />
+        </div>
       </div>
       <h1 class="text-6xl md:text-80px leading-none text-center md:text-left order-2">UNLEASH YOUR GAMING POTENTIAL</h1>
       <Button className="flex items-center justify-center gap-1 order-3" isLarge>

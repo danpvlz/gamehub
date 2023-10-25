@@ -6,7 +6,7 @@ export default {
     extend: {
       fontFamily: {
         arcade: ["Arcade", "Inter", ...defaultTheme.fontFamily.sans],
-        pixelify: ["Pixelify Sans", "Inter", ...defaultTheme.fontFamily.sans],
+        pixelify: ["Pixelify Sans"],
       },
       fontSize:{
         '80px': '80px',

@@ -24,7 +24,16 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-  </head>
+
+    <link
+      rel="preload"
+      href="/fonts/ARCADECLASSIC.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    /></head
+  >
+
   <body class="font-arcade flex flex-col items-center text-lg bg-whiteish">
     <Header />
     <hr class="w-full bg-zinc-700 h-[3px]" />

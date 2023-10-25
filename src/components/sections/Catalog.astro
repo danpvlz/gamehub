@@ -32,15 +32,17 @@ const catalog = [
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-full">
     {
       catalog.map((c) => (
-        <div class="relative w-full h-full">
-          <Image
-            src={c.src}
-            alt={c.name}
-            class="w-full h-full aspect-square object-cover"
-          />
+        <div class="relative w-full h-full aspect-square">
+          <div class="bg-zinc-200 w-full h-full">
+            <Image
+              src={c.src}
+              alt={c.name}
+              class="w-full h-full aspect-square object-cover"
+            />
+          </div>
           <div class="absolute top-2 inset-x-0 flex justify-center">
             <p
               class={twMerge(
