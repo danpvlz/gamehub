@@ -1,0 +1,29 @@
+---
+import { twMerge } from "tailwind-merge";
+interface Props {
+  isLight?: boolean;
+  isLarge?: boolean;
+  className?: string;
+  onclick?: string;
+}
+
+const { isLight, isLarge, className = "", onclick } = Astro.props;
+---
+
+<button
+  class={twMerge(
+    `px-5 py-1 border-2 border-black transition-all duration-100 group shadow-md hover:shadow-inner`,
+    isLight
+      ? "bg-whiteish hover:shadow-zinc-600"
+      : "hover:shadow-black bg-black text-white hover:bg-zinc-700",
+    isLarge ? "w-64" : "",
+    className
+  )}
+  onclick={onclick}
+>
+  <div
+    class="group-hover:translate-y-[1px] transition-all duration-100 flex items-center gap-2 justify-center"
+  >
+    <slot />
+  </div>
+</button>

@@ -1,0 +1,67 @@
+---
+import Section from "../Section.astro";
+import Title from "../Title.astro";
+import { twMerge } from "tailwind-merge";
+
+import swordking from "../../assets/catalog/swording.jpg";
+import treasurehunt from "../../assets/catalog/treasure-hunt.jpg";
+import spacewar from "../../assets/catalog/space-war.png";
+import nightknight from "../../assets/catalog/night-knight.png";
+import everest from "../../assets/catalog/everest.avif";
+import jumper from "../../assets/catalog/jumper.jpg";
+import { Image } from "astro:assets";
+import Button from "../Button.astro";
+
+const catalog = [
+  { name: "Sword king", src: swordking, isLight: false },
+  { name: "Treasure hunt", src: treasurehunt, isLight: true },
+  { name: "space war", src: spacewar, isLight: true },
+  { name: "Night Knight", src: nightknight, isLight: true },
+  { name: "Everest", src: everest, isLight: false },
+  { name: "Jumper", src: jumper, isLight: true },
+];
+---
+
+<Section id="catalog" className="gap-6 md:gap-14">
+  <div class="flex flex-col md:flex-row justify-between">
+    <Title text="Catalog" />
+    <p class="font-pixelify max-w-md">
+      Welcome to our game catalog - your gateway to an exciting world of
+      entertainment. From action to adventure, we have games for every player.
+      Inmerse yourself and enjoy!
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+      catalog.map((c) => (
+        <div class="relative w-full h-full">
+          <Image
+            src={c.src}
+            alt={c.name}
+            class="w-full h-full aspect-square object-cover"
+          />
+          <div class="absolute top-2 inset-x-0 flex justify-center">
+            <p
+              class={twMerge(
+                "text-3xl",
+                c.isLight ? "text-white" : "text-black"
+              )}
+            >
+              {c.name}
+            </p>
+          </div>
+          <Button
+            isLight={c.isLight}
+            className={"absolute bottom-3 inset-x-10 border-0 py-1.5"}
+          >
+            Play
+          </Button>
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex justify-center">
+    <Button className="w-full md:w-64">Show more games</Button>
+  </div>
+</Section>

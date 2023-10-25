@@ -1,0 +1,11 @@
+---
+import { twMerge } from 'tailwind-merge';
+interface Props{
+    id: string;
+    className?: string;
+}
+const { id, className = '' } = Astro.props
+---
+<section id={id} class={twMerge('w-full max-w-5xl py-10 md:py-16 flex flex-col gap-4',className)}>
+    <slot />
+</section>

@@ -1,0 +1,18 @@
+---
+import About from '../components/sections/About.astro';
+import Landing from '../components/sections/Landing.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import Catalog from '../components/sections/Catalog.astro';
+import Subscription from '../components/sections/Subscription.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="GameHub.">
+	<main class="w-full flex flex-col items-center p-4">
+		<Landing />
+		<About />
+		<HowItWorks />
+		<Catalog />
+		<Subscription />
+	</main>
+</Layout>

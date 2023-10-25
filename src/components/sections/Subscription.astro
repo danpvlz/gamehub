@@ -1,0 +1,105 @@
+---
+import Button from "../Button.astro";
+import Section from "../Section.astro";
+import Title from "../Title.astro";
+import star from "../../assets/how-it-works/start.png";
+import dollarpixeled from "../../assets/dollarpixeled.png";
+import { Image } from "astro:assets";
+
+const subscriptions = [
+  {
+    name: "Starter",
+    features: [
+      "Unlimited access to a curated selection of popular games",
+      "Ad-supported experience",
+      "Basic customer support",
+      "Monthly subscription fee",
+    ],
+    cost: 0,
+  },
+
+  {
+    name: "Premiun",
+    features: [
+      "Unlimited access to a wide range of games across all genres",
+      "Ad-free experience for uninterrupted gameplay",
+      "Enhanced customer support",
+      "Exclusive in-game content and bonuses",
+      "Monthly or annual subscription options",
+    ],
+    cost: 7,
+    mostRecommended: true,
+  },
+
+  {
+    name: "Ultimate",
+    features: [
+      "All features of the Premium subscription",
+      "Early access to new game releases",
+      "Exclusive access to beta testing and demos",
+      "Special discounts on game purchases",
+      "Priority customer support",
+    ],
+    cost: 20,
+  },
+];
+---
+
+<Section id="subscriptions" className="gap-8">
+  <Title text="Subscriptions" />
+  <div class="flex flex-col md:grid grid-cols-3 gap-3">
+    {
+      subscriptions.map((sub) => (
+        <div>
+          {sub.mostRecommended ? (
+            <div class="h-10 text-2xl bg-black text-white flex justify-center items-center">
+              Most recommended
+            </div>
+          ) : (
+            <div class="hidden md:block h-10"></div>
+          )}
+          <div class="border-2 border-zinc-400 p-6 pb-10 text-center flex flex-col justify-between h-full">
+            <div>
+              <p class="text-3xl mb-4">{sub.name}</p>
+              <ul class="text-left text-lg text-zinc-500 font-pixelify">
+                {sub.features.map((feature) => (
+                  <li class="flex gap-2 mb-4">
+                    <div>
+                      <Image
+                        src={star}
+                        width={star.width}
+                        alt="Star"
+                        width={"25"}
+                      />
+                    </div>
+                    <p class="w-8/12 ml-2">{feature}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="w-full flex flex-col mt-6">
+              <div class="mb-4">
+                {sub.cost > 0 ? (
+                  <div class="flex justify-center items-center text-2xl">
+                    <p>{sub.cost}</p>
+                    <Image
+                      src={dollarpixeled}
+                      alt="Dollars"
+                      width="24"
+                      height="24"
+                      class="object-cover pl-1"
+                    />
+                    <p>/MONTH</p>
+                  </div>
+                ) : (
+                  "FREE"
+                )}
+              </div>
+              <Button>Buy</Button>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>

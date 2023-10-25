@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/control.png";
+import Button from "./Button.astro";
+---
+
+<header
+  class="uppercase flex flex-col md:flex-row gap-3 justify-between items-center max-w-5xl w-full py-6"
+>
+  <a href="/" class="flex items-center gap-2">
+    <Image alt={"Logo"} src={logo} width={"80"} />
+    <span class="text-2xl">GAMEHUB</span>
+  </a>
+  <nav>
+    <ul class="flex gap-4 md:gap-8 text-xl">
+      <li><a href="/#about">About Us</a></li>
+      <li><a href="/#how-it-works">How it works</a></li>
+      <li><a href="/#catalog">Catalog</a></li>
+      <li><a href="/#subscriptions">Subscriptions</a></li>
+    </ul>
+  </nav>
+  <div class="flex gap-2">
+    <Button>Sign up</Button>
+    <Button isLight>Log in</Button>
+  </div>
+</header>

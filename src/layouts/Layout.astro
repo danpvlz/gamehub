@@ -1,0 +1,46 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-arcade flex flex-col items-center text-lg bg-whiteish">
+    <Header />
+    <hr class="w-full bg-zinc-700 h-[3px]" />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: "Arcade";
+    src: url("/fonts/ARCADECLASSIC.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  html {
+    font-family: "Arcade", sans-serif;
+  }
+</style>

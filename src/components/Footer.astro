@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/control.png";
+---
+
+<footer
+  class="bg-black text-white w-full pt-14 pb-6 mt-20 flex flex-col items-center gap-10"
+>
+  <div class="max-w-7xl w-full flex flex-col gap-10 lg:gap-0 text-center lg:text-left lg:grid grid-cols-5">
+    <a
+      href="/"
+      class="flex items-start justify-center lg:justify-start text-3xl col-span-2"
+    >
+      <div class="flex items-center gap-2">
+        <Image src={logo} width={"70"} alt="Logo" />
+        <span>GAMEHUB</span>
+      </div>
+    </a>
+    <ul class="flex flex-col text-xl">
+      <li><a href="/#about">About Us</a></li>
+      <li><a href="/#how-it-works">How it works</a></li>
+      <li><a href="/#catalog">Catalog</a></li>
+      <li><a href="/#subscriptions">Subscriptions</a></li>
+    </ul>
+    <div class="flex flex-col w-full items-center lg:items-start">
+      <p class="flex gap-2 items-center"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-mail"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
+          ></path>
+          <path d="M3 7l9 6l9 -6"></path>
+        </svg>
+        <span>gamehub@gmail.com</span></p
+      >
+      <p class="flex gap-2 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-phone"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+          ></path>
+        </svg>
+        <span>51-500-555-555</span>
+      </p>
+    </div>
+    <div class="flex flex-col">
+      <p>68 HAMILTON</p>
+      <p>AVEYONKERS NY</p>
+      <p>10705-2143USA</p>
+    </div>
+  </div>
+  <a class="text-light-blue underline" href="https://dribbble.com/shots/22652560-Game-Shop-Landing-Page" target="_blank" rel="noreferrer">Development of figma design: GAMEHUB</a>
+</footer>

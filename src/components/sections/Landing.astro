@@ -1,0 +1,46 @@
+---
+import towers from "../../assets/landing/towers.jpg";
+import planet from "../../assets/landing/planet.jpg";
+import castle from "../../assets/landing/castle.jpg";
+import afrohair from "../../assets/landing/afrohair.jpg";
+import { Image } from "astro:assets";
+import Section from "../Section.astro";
+import Button from "../Button.astro";
+---
+
+<Section id="home">
+  <div class="grid grid-cols-1 md:grid-cols-3 md:gap-5">
+    <Image src={towers} height={towers.height} class="w-full h-full object-cover" alt="Mario bross towers" />
+    <div class="col-span-2 flex flex-col justify-between items-center md:items-start mt-5 md:mt-0 gap-5 md:gap-10">
+      <div class="grid grid-cols-3 gap-5 order-4 md:order-1">
+        <Image src={planet} width={"500"} height={"500"} class="w-full h-full object-cover" alt="Pixeled world" />
+        <Image src={castle}  class="w-full h-full object-cover" alt="Pixeled castle" />
+        <Image
+          src={afrohair}
+          width={"500"} height={"500"}
+          class="w-full h-full object-cover"
+          alt="Pixeled afro hair"
+        />
+      </div>
+      <h1 class="text-6xl md:text-80px leading-none text-center md:text-left order-2">UNLEASH YOUR GAMING POTENTIAL</h1>
+      <Button className="flex items-center justify-center gap-1 order-3" isLarge>
+        Let's go
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M17 7l-10 10"></path>
+          <path d="M8 7l9 0l0 9"></path>
+        </svg>
+      </Button>
+    </div>
+  </div>
+</Section>

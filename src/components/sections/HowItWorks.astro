@@ -1,0 +1,42 @@
+---
+import Section from "../Section.astro";
+import Title from "../Title.astro";
+
+import coin from "../../assets/how-it-works/coin.png";
+import sword from "../../assets/how-it-works/sword.png";
+import shield from "../../assets/how-it-works/shield.png";
+import start from "../../assets/how-it-works/start.png";
+import Step from "../Step.astro";
+import Button from "../Button.astro";
+
+const steps = [
+  {
+    src: coin,
+    text: "Go to games catalog",
+  },
+  {
+    src: sword,
+    text: "Choose game",
+  },
+  {
+    src: shield,
+    text: "Enter competition",
+  },
+  {
+    src: start,
+    text: "Take your prize",
+  },
+];
+---
+
+<Section id="how-it-works" className="flex flex-col gap-12">
+  <div class="flex flex-col md:flex-row md:items-center justify-between w-full">
+    <Title text="How it works" />
+    <div>
+      <Button isLarge onclick='window.location.replace("#catalog")'>Go to catalog</Button>
+    </div>
+  </div>
+  <div class="flex flex-col">
+    {steps.map((step, i) => <Step {...step} pos={i} />)}
+  </div>
+</Section>

@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import { twMerge } from "tailwind-merge";
+interface Props {
+  src: ImageMetadata;
+  text: string;
+  pos: number;
+}
+
+const { text, src, pos } = Astro.props;
+---
+
+<div class="flex items-center">
+  {
+    pos > 0 ? (
+      <div class="gap-12 ml-8 hidden md:flex">
+        {pos > 1
+          ? Array(pos - 1)
+              .fill(1)
+              .map((el) => <div class="w-36" />)
+          : null}
+        <div class="h-28 w-32 p-1">
+          <div class="w-full h-full border-l-[3px] md:border-b-[3px] border-zinc-500" />
+        </div>
+      </div>
+    ) : null
+  }
+  <div class={twMerge(`flex items-center gap-5`, pos > 0 ? "mt-5 md:mt-20 md:pl-4" : "")}>
+    <Image src={src} width={"75"} class="w-12 md:w-auto" alt={text} />
+    <p class="text-3xl md:text-5xl">{text}</p>
+  </div>
+</div>
